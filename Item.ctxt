@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=java.lang.String\ get_name()
+comment0.text=\r\n\ @return\ liefert\ die\ Bezeichnung\ des\ Gegenstands\ zur\u00FCck\r\n
+comment1.params=
+comment1.target=int\ get_value()
+comment1.text=\r\n\ @return\ liefert\ Geldwert\ des\ Gegenstands\r\n\ als\ Centbetrag\ zur\u00FCck\r\n
+comment2.params=name\ value_cent
+comment2.target=Item(java.lang.String,\ int)
+comment2.text=\ Der\ volle\ Konstruktor.Bezeichnung\ des\ Gegenstands\r\n\ \ und\ der\ Geldwert\ in\ Cent\r\n
+comment3.params=name
+comment3.target=Item(java.lang.String)
+comment3.text=\ Halbautomatik,\ der\ Geldwert\ des\ Gegenstands\ wird\r\n\ \ automatisch\ generiert,\ man\ muss\ nur\ den\ Namen\r\n\ \ des\ gegenstands\ angeben.\ F\u00FCr\ testzwecke.\r\n
+numComments=4

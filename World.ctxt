@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=
+comment0.target=World()
+comment1.params=
+comment1.target=int[][]\ getmap()
+comment2.params=x\ y
+comment2.target=void\ descr(int,\ int)
+comment3.params=
+comment3.target=int\ getArrayHeight()
+comment4.params=
+comment4.target=int\ getArrayLength()
+numComments=5

@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.params=
+comment0.target=CommandParser()
+comment0.text=\r\n\ Im\ Konstruktor\ wird\ das\ "W\u00F6rterbuch"\ erstellt,\ den\ der\ Befehlsparser\r\n\ versteht\r\n
+comment1.params=command
+comment1.target=void\ parse_command(java.lang.String)
+comment2.params=pos
+comment2.target=java.lang.String\ getCommandStackValueAt(int)
+comment3.params=
+comment3.target=void\ printCommandStackTrace()
+comment4.params=
+comment4.target=int\ getCommandStackSize()
+numComments=5
