@@ -1,13 +1,11 @@
-/**
- *
- * @author nbnds
- */
-import java.util.*;
+package core;
+
 public class Player {
     private String name = "dummy";
     private int posx; 
     private int posy;
-    private ArrayList<Item> inventory; //inventory not an instance of Inventory? WTF?!
+    //private ArrayList<Item> inventory; //inventory not an instance of Inventory? WTF?!
+    private Inventory inv;
     private World w;
     //Default Konstruktor
     public Player(String n)
@@ -15,14 +13,14 @@ public class Player {
         name = n;
         posy = 0;
         posx = 0;
-        inventory = new ArrayList<Item>();
-        w = new World(); //evry player has own copy of the world
+        inv = new Inventory();
+        w = new World(); //every player has own copy of the world
     }
-    public Player(String n, Item [] i){
+    public Player(String n, Inventory i){
             name = n;
         posy = 0;
         posx = 0;
-        inventory = new ArrayList<Item>(Arrays.asList(i));
+        inv = i;
         w = new World(); //evry player has own copy of the world
     }
     public void getStats()
@@ -34,70 +32,25 @@ public class Player {
     {
         return name;
     }
-    public Item getItemByName(String s)
-    {
-        for(int i=0;i < inventory.size();i++)
-        {
-            if (inventory.get(i).get_name().equals(s))
-            {
-               return inventory.get(i); 
-            }
-            else
-            {
-                
-            }
-        }
-        return null;
-    }
+
     public int getValue(Item i)
     {
         return i.item_value;
     }
     public void pickup_item(String s)
-    {   
+    {  
         Item i = new Item(s);
-        inventory.add(i);
+        inv.addItem(i);
     }
-    
-    public void drop_item(String s) throws IndexOutOfBoundsException
-    {
-        try
-       {
-          if(inventory.isEmpty()==false)
-          {
-           inventory.remove(getItemByName(s));
-           }
-           else
-           {
-            System.out.println("Inventar ist leer.");
-           }
-           
-            //debugging output
-            System.out.println(s+" wurde entfernt");
 
-       }
-       catch(IndexOutOfBoundsException IoBE){
-        System.out.println("Gegenstand nicht gefunden");
-       }
-            
-    }
-    public void list_inventory()
-    {
-        if(inventory.isEmpty()==false)
-        {
-          for (int i=0; i<inventory.size();i++)
-          {
-            System.out.println(inventory.get(i).get_name());
-          }
-        }
-        else
-        {
-            System.out.println("Inventar ist leer.");
-        }
-    }   
+
     public void look_around()
     {
         this.w.descr(this.posx,this.posy);
+    }
+    
+    public void show_map(){
+    	this.w.printMap();
     }
     public void go_east()
     {
@@ -156,5 +109,9 @@ public class Player {
     public void open(Item i)
     {
     }
+	public Inventory getInventory() {
+		// TODO Auto-generated method stub
+		return this.inv;
+	}
     
 }

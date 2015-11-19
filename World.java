@@ -1,8 +1,10 @@
+package core;
 /**
  * Die karte ist zZt als 2D Array implementiert. 
- * Kapselung in eigener Klasse wünschenswert.
+ * Kapselung in eigener Klasse wï¿½nschenswert.
  */
- 
+
+
 
 /**
  *
@@ -13,6 +15,7 @@ private int[][] map;
 public World()
 { 
  map = new int[][]{{0,0,0,1},{0,1,0,0},{0,1,1,0},{0,0,0,0},{0,1,1,1}};
+
 }
 public int[][] getmap()
 {
@@ -23,9 +26,9 @@ public void descr(int x,int y)
 {//beschrreibe umgebung der koordinate
 int k=0; 
 //sollte keine der bedingungen zutreffen bleibt k=0
-//jede bedingung wird geprüft, wenn die zutrifft
-//so wird k vergrößert, die zahl k lässt so am ende
-//auf die zutreffenden Fälle rückschlüsse ziehen
+//jede bedingung wird gepruet, wenn die zutrifft
+//so wird k vergroessert, die zahl k laesst so am Ende
+//auf die zutreffenden Faelle Rueckschluesse ziehen
 if ((y-1 >= 0)&&this.map[y-1][x] !=1)
 {
 k=k+1; //north
@@ -147,14 +150,27 @@ switch(k)
             System.out.println("Ich sehe mich um, und sehe nichts");
     }
 }
-// getArrayHeight -- testmethode, kann entfernt werden
+//TODO getArrayHeight -- testmethode, kann entfernt werden
 private int getArrayHeight()
 {
 return this.map.length;
 }
-// getArrayLength -- testmethode, kann entfernt werden
+//TODO getArrayLength -- testmethode, kann entfernt werden
 private int getArrayLength()
 {
 return this.map[0].length;
+}
+public void printMap(){
+	for (int i = 0; i<this.map[0].length; i++){
+		System.out.print("_");
+	}
+	System.out.println();
+	for (int vert = 0; vert < this.map.length;vert++){
+		if(this.map[vert][0] == 0){System.out.print("|");}
+		for (int hor = 0; hor<this.map[0].length;hor++){
+			if(this.map[vert][hor] == 0) { System.out.print(" "); } else { System.out.print("X");}
+		}
+		System.out.println("|");
+	}
 }
 }

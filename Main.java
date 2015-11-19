@@ -1,3 +1,4 @@
+package core;
 /*
  * Main Klasse soll dafuer sorgen dass Game Client nur einmal aufgerufen wird
  */

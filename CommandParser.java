@@ -1,3 +1,4 @@
+package core;
 /*
  * Diese Klasse ist verantwortlich für
  * primÃ¤re Eingabeverarbeitung.
@@ -22,7 +23,7 @@ public class CommandParser {
     HashMap<String, Integer> vocabulary = new HashMap<String, Integer>();
 
 /**
- * Im Konstruktor wird das "Wörterbuch" erstellt, den der Befehlsparser
+ * Im Konstruktor wird das "Woerterbuch" erstellt, den der Befehlsparser
  * versteht
  */
     public CommandParser()
@@ -42,6 +43,7 @@ public class CommandParser {
     vocabulary.put("e",11);
     vocabulary.put("s",12);
     vocabulary.put("l",13);
+    vocabulary.put("map", 14);
     }
     void parse_command(String command)
     {    

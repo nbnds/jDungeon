@@ -1,3 +1,4 @@
+package core;
 /**
  * @author nbnds
  * 
@@ -117,7 +118,7 @@ String user_name;
                  case 3:
                     System.out.println("INFO :Statusinformation");
                     System.out.println("Ihr Inventar:");
-                    p1.list_inventory();
+                    p1.getInventory().list_inventory();
                     break;
                  case 4:
                     System.out.println("WHERE :Position");
@@ -141,14 +142,14 @@ String user_name;
                  case 7:
                     System.out.println("DROP :Fallen lassen");
                     if(commandParser.getCommandStackSize()>1){
-                    p1.drop_item(commandParser.getCommandStackValueAt(1));}
+                    p1.getInventory().drop_item(commandParser.getCommandStackValueAt(1));}
                     else
                     {System.out.println("Kein Argument angegeben");}
                     break;
                  case 8:
                     System.out.println("VALUE :Geldwert des Gegenstands");
                     if(commandParser.getCommandStackSize()>1){
-                    System.out.println(p1.getItemByName(commandParser.getCommandStackValueAt(1)).get_value());}
+                    System.out.println(p1.getInventory().getItemByName(commandParser.getCommandStackValueAt(1)).get_value());}
                     else
                     {System.out.println("Kein Gegenstand angegeben");}
                     break;
@@ -167,6 +168,8 @@ String user_name;
                  case 13:
                     p1.look_around();
                     break;
+                 case 14:
+                	p1.show_map(); 
                  default:
                     System.out.println("Sie verlassen das Spiel");
                }
